@@ -1,0 +1,23 @@
+﻿@model ChetuApplication12.Models.Employee
+@{
+    ViewData["Title"] = "EmployeeDetail";
+}
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src= https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.jpg
+         alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <p class="card-text">
+            <h3>Email: @Model.Email</h3>
+            <h3>Gender: @Model.Gender</h3>
+            <h3>Salary: @Model.Salary</h3>
+
+
+        </p>
+        <a asp-action="GetEmployee" asp-controller="Employee" asp-route-id="@Model.Id"
+           class="btn btn-primary">Back to list</a>
+    </div>
+</div>
+
+

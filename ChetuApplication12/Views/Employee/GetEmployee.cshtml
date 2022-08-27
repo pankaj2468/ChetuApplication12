@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ChetuApplication12.Models.Employee>
+@{
+    ViewData["Title"] = "GetEmployee";
+}
+
+<h1>GetEmployee</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Details</th>
+        
+
+    </tr>
+    @foreach (var emp in Model)
+         {
+<tr>
+           <td>@emp.Name</td>
+           <td><a asp-action="EmployeeDetail" asp-controller="Employee" asp-route-id="@emp.Id" 
+                  class="btn btn-outline-info">View Detail</a></td>
+
+
+
+</tr>
+         }
+    <tr>
+        <td colspan="2">
+            <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-info">Back to Department</a>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,39 @@
+﻿@*@model IEnumerable<ChetuApplication12.Models.Employee>*@
+@model IEnumerable<ChetuApplication12.Models.Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="box">
+    @*<h1>Welocme to Employee page</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Gender</th>
+
+        </tr>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+                <td>@emp.Email</td>
+                <td>@emp.Salary</td>
+                <td>@emp.Gender</td>
+
+            </tr>
+        }
+    </table>*@
+    <ul>
+        @foreach(var d in Model)
+            {
+                @*<li>
+                    <a href="Employee/GetEmployee/@d.Id">@d.Name</a>
+                </li>*@
+            <li><a asp-action="GetEmployee" asp-controller="Employee" asp-route-id="@d.Id">@d.Name</a></li>
+            }
+    </ul>
+</div>
